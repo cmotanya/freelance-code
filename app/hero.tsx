@@ -1,118 +1,104 @@
-import { Button } from "#/components/ui/button";
-import { ArrowBigRight, ArrowUpRight } from "lucide-react";
-import { easeInOut, motion } from "framer-motion";
-import { useEffect, useRef } from "react";
-import { glitchEffect } from "#/lib/animations/glitch";
-import { textReveal } from "#/lib/animations/textReveal";
-import { pageFold } from "#/lib/animations/pageFold";
+"use client";
 
-function Hero() {
-  const titleRef = useRef<HTMLHeadingElement>(null);
+import { useRef } from "react";
+import Link from "next/link";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ArrowBigRight, ArrowUpRight } from "lucide-react";
+import { glitchEffect } from "@/components/animations/glitch";
+import { animateHeroEntrance } from "@/components/animations/animateHero";
+import { Button } from "@/components/ui/button";
+
+gsap.registerPlugin(useGSAP);
+
+export default function Hero() {
+  const container = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
   const subTextRef = useRef<HTMLParagraphElement>(null);
   const heroElement = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
-    if (titleRef.current && subTextRef.current) {
-      const revealText = textReveal({
-        titleEl: titleRef.current,
-        subTextEl: subTextRef.current,
-      });
-      return revealText;
-    }
+  useGSAP(
+    () => {
+      let cleanupEntrance: (() => void) | undefined;
+      let cleanupGlitch: (() => void) | undefined;
 
-    if (heroElement.current) {
-      const heroGlitch = glitchEffect(heroElement.current);
-      return heroGlitch;
-    }
-  }, []);
+      if (titleRef.current && subTextRef.current) {
+        cleanupEntrance = animateHeroEntrance({
+          titleEl: titleRef.current,
+          subTextEl: subTextRef.current,
+        });
+      }
+
+      if (heroElement.current) {
+        cleanupGlitch = glitchEffect(heroElement.current);
+      }
+
+      return () => {
+        cleanupEntrance?.();
+        cleanupGlitch?.();
+      };
+    },
+    { scope: container },
+  );
 
   return (
     <section
-      id="/"
-      style={{ transformStyle: "preserve-3d" }}
-      className="flex min-h-screen flex-col space-y-6 overflow-hidden px-4 pt-8"
+      ref={container}
+      id="hero"
+      className="text-foreground flex flex-col items-center justify-center gap-10"
     >
-      <div className="text-tertiary border-tertiary/50 shadow-tertiary/20 mx-auto flex items-center justify-center gap-1 rounded-full border px-2 py-1 text-xs font-semibold tracking-[0.15em] uppercase shadow-md">
-        <span className="bg-tertiary size-2 rounded-full" />
-        Open For Contract Work
+      <div className="border-foreground bg-muted-foreground text-primary-foreground gap-2 border-4 px-3 py-2 font-medium tracking-widest uppercase shadow-[6px_6px_0_var(--primary-strong)]">
+        Available for Freelance Work
       </div>
 
-      <div className="flex flex-col items-center justify-center space-y-5 text-center">
-        <div ref={titleRef}>
-          <p className="text-sm">
-            Hi, I&apos;m <span className="font-bold">Cornelius👋</span>
-          </p>
-          <h1 className="font-serif uppercase">
-            let me take you
-            <span className="text-muted block text-5xl">
-              from{" "}
-              <span className="font-display text-error text-6xl font-extrabold tracking-wide">
-                Zero
-              </span>{" "}
-            </span>
-            <span className="block text-5xl">
-              to{" "}
-              <span
-                ref={heroElement}
-                className="font-display text-tertiary inline-block text-7xl font-extrabold tracking-wide"
-              >
-                hero
-              </span>
-            </span>
-          </h1>
-        </div>
+      <div className="border-foreground bg-card w-full space-y-6 border-4 p-5 text-center shadow-[8px_8px_0_var(--foreground)]">
+        <h3 className="text-primary font-medium">Hi, I&apos;m Cornelius 👋</h3>
 
-        <p ref={subTextRef} className="text-center leading-relaxed">
-          I handle everything from setup to security. <br /> Every step from{" "}
+        <h1 className="font-serif text-6xl leading-[0.88] font-bold tracking-wider uppercase">
+          <span className="font-mono text-2xl">let me take you</span> <br />
+          <span className="text-muted-foreground/80">from</span>{" "}
+          <span className="font-display text-error">zero</span> <br />
+          <span className="">to</span>{" "}
+          <span className="font-display text-secondary">hero</span>
+        </h1>
+
+        <p
+          ref={subTextRef}
+          className="max-w-2xl text-center text-lg leading-relaxed"
+        >
+          I handle everything from setup to security. Every step from{" "}
           <strong>web apps</strong> to <strong>security</strong> and{" "}
-          <strong>network infrastructure</strong>, we have a perfect solution
-          for you.{" "}
+          <strong>network infrastructure</strong>, we have a raw solution for
+          you.{" "}
         </p>
       </div>
-      <div className="mx-5 flex flex-col gap-3">
-        <Button
-          variant="outline"
-          className="hover:bg-primary/80 border-outline-variant bg-primary border"
-        >
-          <a
+
+      <div className="mx-auto flex w-full max-w-md flex-col gap-4 sm:flex-row sm:justify-center">
+        {/* Button 1 */}
+        <Button className="bg-secondary border-muted-foreground text-foreground hover:bg-secondary/90 active:bg-secondary/90 group h-auto w-full rounded-none border-4 px-8 py-4 text-xl tracking-tighter shadow-[7px_7px_0_var(--foreground)] sm:w-auto">
+          <Link
             href="#contact"
-            className="text-surface flex items-center justify-center gap-2 text-base uppercase hover:underline"
+            className="flex items-center justify-center gap-3"
           >
-            Start From Zero <ArrowBigRight />
-          </a>
+            Start From Zero{" "}
+            <ArrowBigRight className="animate-float-left size-6 transition-transform group-hover:translate-x-2" />
+          </Link>
         </Button>
+
+        {/* Button 2 */}
         <Button
           variant="outline"
-          className="hover:bg-surface-bright border-outline-variant bg-surface border"
+          className="border-foreground bg-background active:bg-background/90 group h-auto w-full rounded-none border-4 py-4 text-xl shadow-[7px_7px_0_var(--primary)] sm:w-auto"
         >
-          <a
+          <Link
             href="#contact"
-            className="text-primary flex items-center justify-center gap-2 text-base uppercase hover:underline"
+            className="flex items-center justify-center gap-3"
           >
-            View My Projects <ArrowUpRight />
-          </a>
+            View My Projects{" "}
+            <ArrowUpRight className="animate-float-slow size-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </Link>
         </Button>
       </div>
-      <a
-        href="#about"
-        className="text-muted flex flex-col items-center justify-center gap-2 text-sm font-semibold"
-      >
-        <span>Scroll Down</span>
-
-        <div className="border-primary/30 flex h-10 w-6 items-start justify-center rounded-full border p-1">
-          <motion.div
-            animate={{ y: [0, 16, 0] }}
-            transition={{
-              duration: 1.2,
-              repeat: Infinity,
-              ease: easeInOut,
-            }}
-            className="scroll-dot bg-primary size-2 rounded-full"
-          />
-        </div>
-      </a>
     </section>
   );
 }
-
-export default Hero;
