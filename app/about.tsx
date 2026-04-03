@@ -1,5 +1,6 @@
 "use client";
 
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Card } from "@/components/ui/card";
