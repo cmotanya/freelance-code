@@ -1,14 +1,14 @@
 "use client";
 
 import { useRef } from "react";
-import Link from "next/link";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ArrowBigRight, ArrowUpRight } from "lucide-react";
+import { ArrowBigRight, ArrowRight, Download, Sparkles } from "lucide-react";
 import { glitchEffect } from "@/components/animations/glitch";
 import { animateHeroEntrance } from "@/components/animations/animateHero";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import SkillsAccordion from "@/components/skills-accordion";
+import { Button } from "@/components/ui/button";
 
 gsap.registerPlugin(useGSAP);
 
@@ -46,63 +46,38 @@ export default function Hero() {
     <section
       ref={container}
       id="hero"
-      className="text-foreground flex flex-col items-center justify-center gap-10"
+      className="flex flex-col items-center justify-center gap-10"
     >
-      <div className="border-border bg-muted text-muted-foreground gap-2 rounded-full border px-3 py-2 text-sm font-medium tracking-widest uppercase">
-        Available for Freelance Work
+      <div className="border-border relative flex gap-2 rounded-full border py-2 pr-5 pl-2 font-semibold tracking-widest uppercase shadow-sm backdrop-blur-md">
+        Available for Freelance Work{" "}
+        <Sparkles
+          size={11}
+          className="absolute inset-0 top-1 left-[94%] fill-yellow-500 stroke-yellow-800"
+        />
       </div>
 
-      <Card className="bg-card w-full p-5 text-center">
-        <h3 className="text-primary font-medium">Hi, I&apos;m Cornelius 👋</h3>
+      <Card className="bg-card w-full p-5 backdrop-blur-sm">
+        <article data-intro="true" className="w-full space-y-4 text-base">
+          <p className="max-w-2xl leading-7">
+            I&apos;m Cornelius. I design and deliver practical digital and
+            physical systems, from <strong>web products</strong> to
+            <strong> network installations</strong> and
+            <strong> surveillance setups</strong>. The goal is always the same:
+            make it clear, solid, and ready for real people to use.
+          </p>
+        </article>
 
-        <h1 className="font-serif text-6xl leading-[0.88] font-bold tracking-wider uppercase">
-          <span className="font-mono text-2xl font-medium">
-            let me take you
-          </span>{" "}
-          <br />
-          <span className="text-muted-foreground/80">from</span>{" "}
-          <span className="font-display text-error">zero</span> <br />
-          <span className="">to</span>{" "}
-          <span className="font-display text-primary">hero</span>
-        </h1>
+        <div className="px-6">
+          <Button className="w-full px-3 py-7 text-base font-medium uppercase">
+            View Projects{" "}
+            <ArrowRight className="animate-float-left ml-1 transition-transform group-hover:translate-x-2" />
+          </Button>
+        </div>
 
-        <p
-          ref={subTextRef}
-          className="max-w-2xl text-center text-lg leading-relaxed"
-        >
-          I handle everything from setup to security. Every step from{" "}
-          <strong>web apps</strong> to <strong>security</strong> and{" "}
-          <strong>network infrastructure</strong>, we have a raw solution for
-          you.{" "}
-        </p>
+        <div>
+          <SkillsAccordion />
+        </div>
       </Card>
-
-      <div className="mx-auto flex w-full max-w-md flex-col gap-4 px-5 sm:flex-row sm:justify-center">
-        {/* Button 1 */}
-        <Button className="active:bg-secondary/90 group h-auto w-full px-8 py-4 text-xl tracking-tighter sm:w-auto">
-          <Link
-            href="#contact"
-            className="flex items-center justify-center gap-3"
-          >
-            Start From Zero{" "}
-            <ArrowBigRight className="animate-float-left size-6 transition-transform group-hover:translate-x-2" />
-          </Link>
-        </Button>
-
-        {/* Button 2 */}
-        <Button
-          variant="outline"
-          className="active:bg-background/90 bg-muted group h-auto w-full py-4 text-xl sm:w-auto"
-        >
-          <Link
-            href="#contact"
-            className="flex items-center justify-center gap-3"
-          >
-            View My Projects{" "}
-            <ArrowUpRight className="animate-float-slow size-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </Link>
-        </Button>
-      </div>
     </section>
   );
 }
