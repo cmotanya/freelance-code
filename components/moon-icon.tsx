@@ -19,9 +19,9 @@ export function MoonIcon() {
         .s3 { transform-origin: 18px 5px;  animation: star-pulse 2.8s ease-in-out infinite 1.4s; }
       `}</style>
 
-      {/* Crescent — same stroke weight and linecap as SunLogo rays */}
+      {/* Crescent — Facing Right, simplified curves for a cleaner crescent shape */}
       <path
-        d="M18 14C18 17.866 14.866 21 11 21C7.13401 21 4 17.866 4 14C4 10.134 7.13401 7 11 7C9.8 8.4 9.2 10.1 9.2 14C9.2 15.8 10 18 12.5 18.4C15.2 18.8 18 16.5 18 14Z"
+        d="M11 14C11 10.134 14.134 7 18 7C21.866 7 25 10.134 25 14C25 17.866 21.866 21 18 21C19.2 19.6 19.8 17.9 19.8 14C19.8 12.2 19 10 16.5 9.6C13.8 9.2 11 11.5 11 14Z"
         stroke="#C2714F"
         strokeWidth="1.8"
         strokeLinecap="round"
@@ -29,7 +29,7 @@ export function MoonIcon() {
         fill="none"
       />
 
-      {/* Three stars — same amber/copper as sun core */}
+      {/* Three stars — Positioned inside/around the crescent */}
       <circle className="s1" cx="21" cy="7" r="1" fill="#E8A838" />
       <circle className="s2" cx="23" cy="14" r="0.7" fill="#C2714F" />
       <circle className="s3" cx="18" cy="5" r="0.8" fill="#E8A838" />
