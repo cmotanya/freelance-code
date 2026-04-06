@@ -66,7 +66,10 @@ export default function Hero() {
 
         <div className="px-6">
           <Button className="w-full px-3 py-7 text-base font-semibold tracking-wider uppercase">
-            <Link href="/project" className="flex items-center gap-1">
+            <Link
+              href="/project"
+              className="flex w-full items-center justify-center gap-1"
+            >
               View Projects{" "}
               <ArrowRight className="animate-float-left ml-1 transition-transform group-hover:translate-x-2" />
             </Link>
