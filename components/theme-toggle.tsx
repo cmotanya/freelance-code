@@ -89,11 +89,7 @@ export default function ThemeToggle() {
             : "animate-[theme-icon-exit_200ms_cubic-bezier(0.4,0,1,1)_forwards]",
         ].join(" ")}
       >
-        {isLight ? (
-          <SunIcon />
-        ) : (
-          <Moon size={28} color="#C2714F" fill="#FDE047" strokeWidth={1.8} />
-        )}
+        {isLight ? <SunIcon /> : <MoonIcon />}
       </span>
     </button>
   );
