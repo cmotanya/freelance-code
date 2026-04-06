@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { SunIcon } from "./sun-icon";
 
 type ThemeMode = "light" | "dark";
 type IconPhase = "enter" | "exit";
@@ -52,7 +53,7 @@ export default function ThemeToggle() {
       aria-label={`Switch to ${isLight ? "dark" : "light"} mode`}
       aria-pressed={!isLight}
       className={[
-        "relative size-12 overflow-hidden rounded-full border",
+        "relative overflow-hidden",
         "flex items-center justify-center",
         "transition-all duration-300 ease-out",
         "hover:scale-105 focus-visible:outline-none active:scale-95",
@@ -84,7 +85,7 @@ export default function ThemeToggle() {
             : "animate-[theme-icon-exit_200ms_cubic-bezier(0.4,0,1,1)_forwards]",
         ].join(" ")}
       >
-        {isLight ? "☀️" : "🌙"}
+        {isLight ? <SunIcon /> : "🌙"}
       </span>
     </button>
   );
