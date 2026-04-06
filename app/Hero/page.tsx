@@ -9,6 +9,7 @@ import { animateHeroEntrance } from "@/components/animations/animateHero";
 import { Card } from "@/components/ui/card";
 import SkillsAccordion from "@/components/skills-accordion";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 gsap.registerPlugin(useGSAP);
 
@@ -64,9 +65,11 @@ export default function Hero() {
         </article>
 
         <div className="px-6">
-          <Button className="w-full px-3 py-7 text-base font-semibold uppercase">
-            View Projects{" "}
-            <ArrowRight className="animate-float-left ml-1 transition-transform group-hover:translate-x-2" />
+          <Button className="w-full px-3 py-7 text-base font-semibold tracking-wider uppercase">
+            <Link href="/project" className="flex items-center gap-1">
+              View Projects{" "}
+              <ArrowRight className="animate-float-left ml-1 transition-transform group-hover:translate-x-2" />
+            </Link>
           </Button>
         </div>
 
