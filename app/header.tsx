@@ -9,8 +9,11 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl flex-row items-center justify-between gap-4">
         <ThemeToggle />
 
-        <Button className="bg-muted border-border text-muted-foreground px-3 py-6 font-semibold tracking-wide uppercase">
-          <Link href="/#contact" className="flex items-center gap-1">
+        <Button
+          asChild
+          className="bg-muted border-border text-muted-foreground px-3 py-6 font-semibold tracking-wide uppercase"
+        >
+          <Link href="/contact" className="flex items-center gap-1">
             Let&apos;s Talk
             <ArrowUpRight className="animate-float-slow size-4" />
           </Link>

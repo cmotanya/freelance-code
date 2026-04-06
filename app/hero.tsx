@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ArrowBigRight, ArrowRight, Download, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { glitchEffect } from "@/components/animations/glitch";
 import { animateHeroEntrance } from "@/components/animations/animateHero";
 import { Card } from "@/components/ui/card";
