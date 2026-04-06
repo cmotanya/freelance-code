@@ -1,5 +1,8 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { SunIcon } from "./sun-icon";
+import { MoonIcon } from "./moon-icon";
 
 type ThemeMode = "light" | "dark";
 type IconPhase = "enter" | "exit";
@@ -85,7 +88,7 @@ export default function ThemeToggle() {
             : "animate-[theme-icon-exit_200ms_cubic-bezier(0.4,0,1,1)_forwards]",
         ].join(" ")}
       >
-        {isLight ? <SunIcon /> : "🌙"}
+        {isLight ? <SunIcon /> : <MoonIcon />}
       </span>
     </button>
   );

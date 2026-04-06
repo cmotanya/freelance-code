@@ -10,60 +10,29 @@ export function MoonIcon() {
       aria-hidden="true"
     >
       <style>{`
-        @keyframes twinkle-1 {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50%       { opacity: 0.2; transform: scale(0.5); }
+        @keyframes star-pulse {
+          0%, 100% { opacity: 1; }
+          50%       { opacity: 0.2; }
         }
-        @keyframes twinkle-2 {
-          0%, 100% { opacity: 0.4; transform: scale(0.7); }
-          50%       { opacity: 1; transform: scale(1); }
-        }
-        @keyframes twinkle-3 {
-          0%, 100% { opacity: 0.7; transform: scale(0.9); }
-          60%       { opacity: 0.1; transform: scale(0.4); }
-        }
-        @keyframes moon-glow {
-          0%, 100% { opacity: 0.15; r: 7px; }
-          50%       { opacity: 0.3;  r: 8.5px; }
-        }
-        .star-1 { transform-origin: 22px 6px;  animation: twinkle-1 2.4s ease-in-out infinite; }
-        .star-2 { transform-origin: 24px 13px; animation: twinkle-2 3.1s ease-in-out infinite; }
-        .star-3 { transform-origin: 19px 4px;  animation: twinkle-3 2.8s ease-in-out infinite 0.6s; }
-        .moon-pulse { transform-origin: 11px 15px; animation: moon-glow 4s ease-in-out infinite; }
+        .s1 { transform-origin: 21px 7px;  animation: star-pulse 2.4s ease-in-out infinite; }
+        .s2 { transform-origin: 23px 14px; animation: star-pulse 3.2s ease-in-out infinite 0.8s; }
+        .s3 { transform-origin: 18px 5px;  animation: star-pulse 2.8s ease-in-out infinite 1.4s; }
       `}</style>
 
-      {/* Soft glow behind moon */}
-      <circle
-        className="moon-pulse"
-        cx="11"
-        cy="15"
-        r="7"
-        fill="#2A9D8F"
-        opacity="0.15"
-      />
-
-      {/* Moon crescent — teal fill, copper edge */}
+      {/* Crescent — same stroke weight and linecap as SunLogo rays */}
       <path
-        d="M19 14.5C19 18.6421 15.6421 22 11.5 22C7.35786 22 4 18.6421 4 14.5C4 10.3579 7.35786 7 11.5 7C10.1667 8.5 9.5 10.4 9.5 14.5C9.5 16.5 10.5 19 13 19.5C16 20.1 19 17.5 19 14.5Z"
-        fill="#1a6b62"
+        d="M18 14C18 17.866 14.866 21 11 21C7.13401 21 4 17.866 4 14C4 10.134 7.13401 7 11 7C9.8 8.4 9.2 10.1 9.2 14C9.2 15.8 10 18 12.5 18.4C15.2 18.8 18 16.5 18 14Z"
         stroke="#C2714F"
-        strokeWidth="1.2"
-        strokeLinejoin="round"
-      />
-
-      {/* Inner crescent highlight */}
-      <path
-        d="M10.5 10C9.8 11.2 9.5 12.8 9.5 14.5C9.5 16.5 10.2 18.2 11.5 19.2"
-        stroke="#2A9D8F"
-        strokeWidth="1"
+        strokeWidth="1.8"
         strokeLinecap="round"
-        opacity="0.6"
+        strokeLinejoin="round"
+        fill="none"
       />
 
-      {/* Stars — copper dots */}
-      <circle className="star-1" cx="22" cy="6" r="1" fill="#E8A838" />
-      <circle className="star-2" cx="24" cy="13" r="0.7" fill="#C2714F" />
-      <circle className="star-3" cx="19" cy="4" r="0.8" fill="#E8A838" />
+      {/* Three stars — same amber/copper as sun core */}
+      <circle className="s1" cx="21" cy="7" r="1" fill="#E8A838" />
+      <circle className="s2" cx="23" cy="14" r="0.7" fill="#C2714F" />
+      <circle className="s3" cx="18" cy="5" r="0.8" fill="#E8A838" />
     </svg>
   );
 }
