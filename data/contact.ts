@@ -1,5 +1,3 @@
-import { Mail, Phone } from "lucide-react";
-
 export const contactDetails = {
   phoneLabel: "+254 712 909 475",
   phoneHref: "tel:+254712909475",
