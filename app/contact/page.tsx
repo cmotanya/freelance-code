@@ -59,7 +59,7 @@ const Contact = () => {
                   <p>{title}</p>
                 </div>
 
-                <p className="text-primary border-border bg-background rounded-lg border p-1 text-xs font-semibold tracking-tighter transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-sm active:scale-[102]">
+                <p className="text-primary border-border bg-background rounded-lg border p-1 text-xs font-medium tracking-tighter transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-sm active:scale-[102]">
                   {value}
                 </p>
               </div>
