@@ -1,17 +1,17 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowBigLeft, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { contactDetails, quickLinks } from "@/data/contact";
-import { ArrowBigLeft, MapPin } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
 
-const ContactPage = () => {
+const Contact = () => {
   return (
     <section className="min-h-screen space-y-6 px-5 py-8">
-      <Link href="/">
-        <Button className="text-base">
+      <Button asChild className="text-base">
+        <Link href="/">
           <ArrowBigLeft /> Back
-        </Button>
-      </Link>
+        </Link>
+      </Button>
 
       <div>
         <h1 className="mt-8 text-3xl font-bold">Contact</h1>
@@ -38,37 +38,33 @@ const ContactPage = () => {
       </div>
 
       <div className="grid gap-2">
-        {quickLinks.map(
-          ({ title, value, href, iconSrc: Icon, iconSrc, note }) => (
-            <Link
-              key={title}
-              href={href}
-              className="bg-muted border-border space-y-4 rounded-3xl border p-3 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-sm"
-            >
-              <div className="mr-5 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  {Icon && (
-                    <Image
-                      src={iconSrc}
-                      alt={`${title} icon`}
-                      width={20}
-                      height={20}
-                    />
-                  )}
-                  <p>{title}</p>
-                </div>
-
-                <p className="text-primary font-semibold">{value}</p>
+        {quickLinks.map(({ title, value, href, iconSrc, note }) => (
+          <Link
+            key={title}
+            href={href}
+            className="bg-muted border-border space-y-4 rounded-3xl border p-3 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-sm"
+          >
+            <div className="mr-5 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                {iconSrc ? (
+                  <Image
+                    src={iconSrc}
+                    alt={`${title} icon`}
+                    width={20}
+                    height={20}
+                  />
+                ) : null}
+                <p>{title}</p>
               </div>
-              <p className="text-muted-foreground text-xs font-medium">
-                {note}
-              </p>
-            </Link>
-          ),
-        )}
+
+              <p className="text-primary font-semibold">{value}</p>
+            </div>
+            <p className="text-muted-foreground text-xs font-medium">{note}</p>
+          </Link>
+        ))}
       </div>
     </section>
   );
 };
 
-export default ContactPage;
+export default Contact;
