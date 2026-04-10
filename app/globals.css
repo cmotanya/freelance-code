@@ -179,17 +179,6 @@ a {
   }
 }
 
-@keyframes arrow-scale {
-  from {
-    opacity: 0.5;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .animate-float-slow {
   animation: float-diagonal 2s ease-in-out infinite;
 }
@@ -203,6 +192,3 @@ a {
   animation: item-stagger 0.45s 1 cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: calc(0.12s * (sibling-index()));
 }
-/* .animate-arrow {
-  animation: arrow-scale 0.8s ease-in-out infinite;
-} */

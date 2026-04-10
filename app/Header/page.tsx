@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/theme-toggle";
 
 export default function Header() {
@@ -9,15 +8,15 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl flex-row items-center justify-between gap-4">
         <ThemeToggle />
 
-        <Button
-          asChild
-          className="px-3 py-6 font-semibold tracking-wide uppercase transition-all duration-200 hover:scale-105 active:scale-95"
+        <button
+          type="button"
+          className="bg-primary text-background rounded-2xl p-3 text-lg leading-5 shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
         >
           <Link href="/contact" className="flex items-center gap-1">
             Let&apos;s Talk
             <ArrowUpRight className="animate-float-slow size-4" />
           </Link>
-        </Button>
+        </button>
       </div>
     </header>
   );

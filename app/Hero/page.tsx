@@ -3,12 +3,9 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 
-import { ArrowRight } from "lucide-react";
-import { glitchEffect } from "@/components/animations/glitch";
+import { ArrowBigRight } from "lucide-react";
 import { animateHeroEntrance } from "@/components/animations/animateHero";
-import { Card } from "@/components/ui/card";
 import SkillsAccordion from "@/components/skills-accordion";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 
@@ -41,11 +38,11 @@ export default function Hero() {
       id="hero"
       className="flex flex-col items-center justify-center gap-10"
     >
-      <div className="bg-background text-muted-foreground border-border relative flex gap-2 rounded-2xl border py-2.5 pr-5 pl-2 text-base font-medium tracking-tight uppercase">
+      <div className="bg-background text-muted-foreground border-muted-foreground/30 relative flex gap-2 rounded-3xl border py-2.5 pr-5 pl-2 text-base font-medium tracking-tight uppercase">
         Available for Freelance Work{" "}
       </div>
 
-      <Card className="bg-card w-full p-5 backdrop-blur-sm">
+      <div className="bg-card border-muted-foreground/30 w-full space-y-8 rounded-3xl border p-5 backdrop-blur-sm">
         <article data-intro="true" className="w-full space-y-4 text-base">
           <p ref={textRef} className="max-w-2xl leading-7">
             I&apos;m Cornelius. I design and deliver practical digital and
@@ -57,22 +54,25 @@ export default function Hero() {
           </p>
         </article>
 
-        <div className="px-6">
-          <Button className="w-full px-3 py-7 text-base font-semibold tracking-wider uppercase">
-            <Link
-              href="/project"
-              className="flex w-full items-center justify-center gap-1"
-            >
-              View Projects{" "}
-              <ArrowRight className="animate-float-left ml-1 transition-transform group-hover:translate-x-2" />
+        <div className="flex w-full justify-start py-4">
+          <button
+            type="button"
+            className="bg-primary text-background rounded-2xl px-3 py-3.5 text-lg leading-5 shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
+          >
+            <Link href="/project" className="flex items-center gap-3">
+              View Projects
+              <ArrowBigRight
+                size={15}
+                className="animate-float-right transition-all"
+              />{" "}
             </Link>
-          </Button>
+          </button>
         </div>
 
         <div>
           <SkillsAccordion />
         </div>
-      </Card>
+      </div>
     </section>
   );
 }

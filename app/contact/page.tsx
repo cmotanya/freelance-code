@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, BadgeCheck, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import CurrentTime from "@/components/current-time";
 import { contactDetails, quickLinks } from "@/data/contact";
 
@@ -19,10 +18,10 @@ const Contact = () => {
 
         <div className="px-3">
           <div className="flex items-center justify-between">
-            <span className="border-border bg-muted rounded-xl border px-2 py-1.5 text-xs font-semibold tracking-[0.22em] uppercase">
+            <span className="border-muted-foreground/30 bg-muted rounded-xl border px-2 py-1.5 text-xs font-semibold tracking-[0.22em] uppercase">
               Open For Work.
             </span>
-            <div className="text-muted-foreground border-ring/30 flex items-center gap-1 rounded-xl border px-2 py-1 text-xs font-medium">
+            <div className="text-muted-foreground border-ring/40 flex items-center gap-1 rounded-xl border px-2 py-1 text-xs font-medium">
               <MapPin
                 size={18}
                 strokeWidth={3}
@@ -38,7 +37,7 @@ const Contact = () => {
             <Link
               key={title}
               href={href}
-              className="bg-muted border-border space-y-4 rounded-3xl border p-3 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-sm"
+              className="bg-muted border-muted-foreground/30 space-y-4 rounded-3xl border p-3 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-sm"
             >
               <div className="mr-5 flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
@@ -53,7 +52,7 @@ const Contact = () => {
                   <p>{title}</p>
                 </div>
 
-                <p className="text-primary border-border bg-background rounded-lg border p-1 text-xs font-medium tracking-tighter transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-sm active:scale-[102]">
+                <p className="text-primary border-muted-foreground/30 bg-background rounded-lg border p-1 text-xs font-medium tracking-tighter transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-sm active:scale-[102]">
                   {value}
                 </p>
               </div>
@@ -77,16 +76,16 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="border-border border-t px-12 pt-10">
-        <Button
-          asChild
-          className="w-full px-4 py-7 text-base tracking-wide uppercase transition-all hover:scale-105 active:scale-95"
+      <div className="mt-15 mb-10 flex w-full justify-center px-6">
+        <button
+          type="button"
+          className="bg-muted border-muted-foreground/50 rounded-2xl border px-4 py-3 text-lg leading-5 shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
         >
           <Link href="/" className="flex items-center gap-2">
-            <ArrowLeft className="animate-float-right size-4" />
-            Back Home
+            <ArrowLeft size={15} className="animate-arrow transition-all" />{" "}
+            Back to Home
           </Link>
-        </Button>
+        </button>
       </div>
     </section>
   );
