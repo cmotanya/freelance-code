@@ -11,15 +11,16 @@ function getSnapshot() {
   return new Intl.DateTimeFormat("en-KE", {
     hour: "2-digit",
     minute: "2-digit",
+    second: "2-digit",
     hour12: true,
     timeZone: "Africa/Nairobi",
   }).format(new Date());
 }
 
-const getServerSnapshot = () => "--:--";
+const getServerSnapshot = () => "00:00:00 AM";
 
 export default function CurrentTime() {
   const time = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
-  return <span className="text-primary font-bold underline">{time}</span>;
+  return <span className="text-muted-primary uppercase">{time}</span>;
 }

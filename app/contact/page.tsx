@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, BadgeCheck, MapPin } from "lucide-react";
+import { ArrowLeft, MapPin } from "lucide-react";
 import CurrentTime from "@/components/current-time";
 import { contactDetails, quickLinks } from "@/data/contact";
 
@@ -18,10 +18,11 @@ const Contact = () => {
 
         <div className="px-3">
           <div className="flex items-center justify-between">
-            <span className="border-muted-foreground/30 bg-muted rounded-xl border px-2 py-1.5 text-xs font-semibold tracking-[0.22em] uppercase">
+            <span className="border-success/70 bg-success/10 text-success flex items-center gap-1.5 rounded-xl border px-2 py-1.5 text-xs font-semibold tracking-wide uppercase">
+              <span className="bg-success size-2.5 rounded-full" />
               Open For Work.
             </span>
-            <div className="text-muted-foreground border-ring/40 flex items-center gap-1 rounded-xl border px-2 py-1 text-xs font-medium">
+            <div className="text-muted-foreground flex items-center gap-1 rounded-xl border px-2 py-1 text-xs font-medium uppercase">
               <MapPin
                 size={18}
                 strokeWidth={3}
@@ -63,15 +64,33 @@ const Contact = () => {
           ))}
         </div>
 
-        <div className="flex items-start justify-center gap-3 pt-8">
-          <BadgeCheck size={20} className="text-primary" />
-          <div>
-            <p className="text-muted-foreground leading-tight">
-              I typically respond as soon as possible.
-            </p>
-            <p className="text-muted-foreground/80 text-xs font-bold">
-              Current time: <CurrentTime /> EAT (UTC+3)
-            </p>
+        <div className="border-muted-foreground/15 mt-16 gap-3 space-y-3 rounded-3xl border p-4 text-center">
+          <div className="flex items-center justify-center gap-3">
+            <Image
+              src="/contact/checkmark-badge.svg"
+              alt="checkmark badge"
+              width={20}
+              height={20}
+            />
+            <h3 className="text-muted-foreground text-lg font-medium">
+              Fast Response
+            </h3>
+          </div>
+          <p className="text-muted-foreground leading-tight">
+            I typically respond as soon as possible.
+          </p>
+          <div className="text-muted-foreground flex items-center justify-center gap-3 text-xs font-medium">
+            <Image
+              src="/contact/customer-service-stroke-rounded.svg"
+              alt="24 hour icon for support call"
+              width={20}
+              height={20}
+              className="object-fit"
+            />
+
+            <div className="rounded-md py-1 font-semibold tracking-wider">
+              <CurrentTime /> EAT (UTC+3)
+            </div>
           </div>
         </div>
       </div>
@@ -79,7 +98,7 @@ const Contact = () => {
       <div className="mt-15 mb-10 flex w-full justify-center px-6">
         <button
           type="button"
-          className="bg-muted border-muted-foreground/50 rounded-2xl border px-4 py-3 text-lg leading-5 shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
+          className="bg-muted border-muted-foreground/50 text-muted-foreground rounded-2xl border px-4 py-3 leading-5 font-semibold uppercase shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
         >
           <Link href="/" className="flex items-center gap-2">
             <ArrowLeft size={15} className="animate-arrow transition-all" />{" "}
