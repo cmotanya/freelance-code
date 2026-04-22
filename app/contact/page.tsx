@@ -88,7 +88,7 @@ const Contact = () => {
               className="object-fit"
             />
 
-            <div className="rounded-md py-1 font-semibold tracking-wider">
+            <div className="flex items-center gap-2 text-sm tracking-wider">
               <CurrentTime /> EAT (UTC+3)
             </div>
           </div>
@@ -98,9 +98,9 @@ const Contact = () => {
       <div className="mt-15 mb-10 flex w-full justify-center px-6">
         <button
           type="button"
-          className="bg-muted border-muted-foreground/50 text-muted-foreground rounded-2xl border px-4 py-3 leading-5 font-semibold uppercase shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
+          className="bg-muted border-primary/50 text-muted-foreground rounded-2xl border p-2.5 leading-5 font-medium shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
         >
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="text-primary flex items-center gap-2">
             <ArrowLeft size={15} className="animate-arrow transition-all" />{" "}
             Back to Home
           </Link>

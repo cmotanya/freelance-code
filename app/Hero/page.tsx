@@ -57,7 +57,7 @@ export default function Hero() {
         <div className="flex w-full justify-start py-4">
           <button
             type="button"
-            className="bg-primary text-background rounded-2xl px-3 py-3.5 text-lg leading-5 shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
+            className="bg-muted text-primary border-primary rounded-2xl border p-2.5 leading-5 font-medium shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
           >
             <Link href="/project" className="flex items-center gap-3">
               View Projects

@@ -10,7 +10,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="bg-primary text-background rounded-2xl p-3 text-lg leading-5 shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
+          className="bg-muted text-primary border-primary/50 rounded-2xl border p-2 leading-5 font-medium shadow-xs transition-all duration-200 ease-in-out hover:scale-105 focus:ring-4 active:scale-95"
         >
           <Link href="/contact" className="flex items-center gap-1">
             Let&apos;s Talk
