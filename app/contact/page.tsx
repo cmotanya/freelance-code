@@ -3,7 +3,9 @@ import { faqs, quickLinks } from "@/data/contact";
 import {
   ArrowRight02Icon,
   CustomerService01Icon,
+  MapPinIcon,
   Pin02Icon,
+  PinCodeIcon,
   Quiz02Icon,
   ZapIcon,
 } from "hugeicons-react";
@@ -20,9 +22,14 @@ const Contact = () => {
           <span className="text-foreground/50">Together</span>
         </h1>
 
-        <div className="flex items-center gap-1">
-          <Pin02Icon size={18} strokeWidth={2} /> Mombasa, Kenya
-          <CurrentTime /> EAT
+        <div className="flex items-center justify-between gap-1 text-xs">
+          <div className="flex items-center gap-1 font-medium">
+            <MapPinIcon size={18} strokeWidth={2} /> Mombasa, Kenya
+          </div>
+          <div className="font-medium">
+            <CurrentTime />
+            EAT
+          </div>
         </div>
       </div>
 

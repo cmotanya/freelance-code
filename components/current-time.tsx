@@ -22,5 +22,5 @@ const getServerSnapshot = () => "00:00:00 AM";
 export default function CurrentTime() {
   const time = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
-  return <div className="text-muted-primary w-30 uppercase">{time}</div>;
+  return <span className="me-1 w-30 text-end uppercase">{time}</span>;
 }
