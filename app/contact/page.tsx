@@ -1,11 +1,10 @@
 import ContactForm from "@/components/contact-form";
 import { faqs, quickLinks } from "@/data/contact";
 import {
+  ArrowLeft02Icon,
   ArrowRight02Icon,
   CustomerService01Icon,
   MapPinIcon,
-  Pin02Icon,
-  PinCodeIcon,
   Quiz02Icon,
   ZapIcon,
 } from "hugeicons-react";
@@ -15,7 +14,7 @@ import CurrentTime from "@/components/current-time";
 
 const Contact = () => {
   return (
-    <section className="mt-10 min-h-screen space-y-8">
+    <section className="my-10 min-h-screen space-y-8">
       <div className="space-y-4 px-5">
         <h1 className="text-6xl font-extrabold tracking-tighter uppercase">
           Let&apos;s <span className="text-primary">Build</span>{" "}
@@ -46,7 +45,7 @@ const Contact = () => {
             notified of the response.
           </p>
           <Link href="#contact-form">
-            <button className="bg-foreground text-background flex items-center gap-2 rounded-2xl px-5 py-3.5">
+            <button className="bg-foreground text-background flex items-center gap-2 rounded-2xl px-5 py-3.5 tracking-wide uppercase">
               Book A Schedule <ArrowRight02Icon />
             </button>
           </Link>
@@ -65,8 +64,13 @@ const Contact = () => {
         <div className="space-y-3">
           {faqs.map((faq, index) => (
             <div key={index} className="flex flex-col gap-0.5">
-              <h4 className="font-semibold">{faq.q}</h4>
-              <p className="text-foreground/60 text-xs">{faq.a}</p>
+              <div className="flex items-center">
+                <span className="text-foreground/60 mr-2 font-medium">
+                  {index + 1}.
+                </span>
+                <h4 className="font-semibold">{faq.q}</h4>
+              </div>
+              <p className="text-foreground/60 ml-5 text-xs">{faq.a}</p>
             </div>
           ))}
         </div>
@@ -106,12 +110,20 @@ const Contact = () => {
                 </span>
               </div>
 
-              <span className="text-primary font-medium tracking-widest">
+              <span className="text-primary font-medium tracking-wide">
                 {value}
               </span>
             </Link>
           ))}
         </div>
+      </div>
+
+      <div className="flex items-center justify-center">
+        <Link href="/">
+          <button className="bg-foreground text-background flex items-center gap-2 rounded-2xl px-5 py-3.5 font-medium tracking-widest uppercase">
+            <ArrowLeft02Icon /> Return to Home
+          </button>
+        </Link>
       </div>
     </section>
   );

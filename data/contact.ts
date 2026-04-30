@@ -39,14 +39,18 @@ export const faqs = [
   },
   {
     q: "Do you handle both hardware and software?",
-    a: "Yes. I specialize in the intersection of both—deploying robust networks and building the custom software that runs on them.",
+    a: "Yes. I specialize in the intersection of both, deploying robust networks and building the custom software that runs on them. My insatiable need to understand and put to use new technologies has propelled my skills across both platforms.",
   },
   {
     q: "How do you handle maintenance?",
-    a: "I offer 'Node-Care' retainers for 24/7 monitoring. For one-off projects, I provide 30 days of complimentary technical support.",
+    a: "I offer 'Node-Care' retainers for 24/7 monitoring. For one-off projects, I provide 30 days of complimentary technical support. However, for long term commitments, my objective remains consistent to provide sustained maintenance for projects that might need immediate care.",
   },
   {
     q: "What tech stack do you prefer?",
-    a: "My 'Golden Stack' is Next.js, TypeScript, and Supabase. For physical security, I focus on Hikvision and Ubiquiti ecosystems.",
+    a: "My go to ecosystem for software projects consists of Next.js or TanStack Start, TypeScript and PostgreSQL. For infrastructure, I architect high-speed networks using Ruijie products while for surveillance I typically use industry wide accepted brands such as Hikvision, Dahua, and UNV. However, I remain flexible in adopting any enterprise-grade hardware as requested.",
+  },
+  {
+    q: "How do you handle project?",
+    a: "I focus on high efficiency architecture that keep overhead cost low. By utilizing optimized products suited for your specific need, I offer reliability without the 'big box' corporate price tag.",
   },
 ];

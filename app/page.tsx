@@ -16,7 +16,6 @@ import {
   ServerStack01Icon,
   StartUp01Icon,
   ToolsIcon,
-  ZapIcon,
 } from "hugeicons-react";
 
 export default function Home() {
@@ -92,6 +91,7 @@ export default function Home() {
         ))}
       </div>
 
+      {/* Recent deployments */}
       <div className="mx-5 my-15 space-y-2">
         <h2 className="text-foreground/70 flex items-center gap-3 font-bold tracking-widest uppercase">
           <StartUp01Icon color="#4a4a4a" strokeWidth={2} />
@@ -224,7 +224,7 @@ export default function Home() {
           Available for local contract projects in Mombasa and across remotely.
         </p>
 
-        <Link href="/contract" className="inline-block">
+        <Link href="/contact" className="inline-block">
           <button className="bg-foreground text-background flex items-center rounded-2xl px-5 py-3.5 tracking-widest uppercase">
             Start A Conversation
           </button>
