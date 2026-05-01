@@ -17,7 +17,7 @@ import { nova } from "@/data/fonts";
 const Contact = () => {
   return (
     <section className="my-10 min-h-screen space-y-8">
-      <div className="space-y-4 px-5">
+      <div id="scroll-to-contact-form" className="space-y-4 px-5">
         <h1 className="text-6xl font-extrabold tracking-tighter uppercase">
           Let&apos;s <span className="text-primary">Build</span>{" "}
           <span className={cn("text-foreground/50", nova.className)}>
@@ -49,7 +49,7 @@ const Contact = () => {
             notified of the response.
           </p>
 
-          <Link href="#contact-form">
+          <Link href="#scroll-to-contact-form">
             <button
               type="button"
               className="bg-foreground text-background group flex items-center gap-2 rounded-2xl px-5 py-3.5 tracking-wide uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100"

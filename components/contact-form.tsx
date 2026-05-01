@@ -33,7 +33,7 @@ const ContactForm = () => {
   }, [state]);
 
   return (
-    <div id="contact-form" className="space-y-5 px-5">
+    <div className="space-y-5 px-5">
       <h2 className="text-foreground/60 flex items-center font-medium">
         For consultation, reach me here...{" "}
         <span className="animate-blink ms-1 h-4 w-0.5 bg-current" />
