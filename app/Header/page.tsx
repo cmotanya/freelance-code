@@ -12,7 +12,7 @@ export default function Header() {
 
         <Link href="/">
           <div
-            className="relative flex size-12 shrink-0 items-center rounded-full p-0.5"
+            className="relative flex size-12 shrink-0 items-center rounded-full p-0.5 transition-all duration-300 ease-in-out hover:scale-95 active:scale-105"
             style={{ background: linear }}
           >
             <div className="bg-muted flex size-full items-center justify-center rounded-full">

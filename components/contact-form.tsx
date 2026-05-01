@@ -33,7 +33,7 @@ const ContactForm = () => {
   }, [state]);
 
   return (
-    <div id="contact-form" className="space-y-5 px-5">
+    <div className="space-y-5 px-5">
       <h2 className="text-foreground/60 flex items-center font-medium">
         For consultation, reach me here...{" "}
         <span className="animate-blink ms-1 h-4 w-0.5 bg-current" />
@@ -95,13 +95,15 @@ const ContactForm = () => {
           <button
             disabled={isPending}
             className={cn(
-              "bg-foreground text-background ml-auto flex items-center gap-2 rounded-2xl px-4 py-3 font-medium uppercase",
+              "bg-foreground text-background group ml-auto flex items-center gap-2 rounded-2xl px-4 py-3 font-medium uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100",
               isPending &&
                 "bg-foreground/30 text-foreground/50 cursor-not-allowed",
             )}
           >
             {isPending ? "Submitting..." : "Submit"}
-            {!isPending && <SentIcon />}
+            {!isPending && (
+              <SentIcon className="transition-transform group-active:translate-x-1" />
+            )}
           </button>
         </div>
       </form>

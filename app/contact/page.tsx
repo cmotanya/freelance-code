@@ -48,9 +48,14 @@ const Contact = () => {
             I typically respond within the shortest time, the moment I am
             notified of the response.
           </p>
-          <Link href="#contact-form">
-            <button className="bg-foreground text-background flex items-center gap-2 rounded-2xl px-5 py-3.5 tracking-wide uppercase">
-              Book A Schedule <ArrowRight02Icon />
+
+          <Link href="">
+            <button
+              type="button"
+              className="bg-foreground text-background group flex items-center gap-2 rounded-2xl px-5 py-3.5 tracking-wide uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100"
+            >
+              Book A Schedule{" "}
+              <ArrowRight02Icon className="transition-transform group-active:translate-x-1" />
             </button>
           </Link>
         </div>
@@ -97,7 +102,7 @@ const Contact = () => {
             <Link
               key={title}
               href={href}
-              className="bg-muted/30 rounded-3xl border p-4"
+              className="bg-muted/30 rounded-3xl border p-4 transition-all duration-300 ease-in-out hover:scale-95 active:scale-105"
             >
               <div className="mb-4 flex items-start justify-between">
                 {iconSrc && (
@@ -124,8 +129,9 @@ const Contact = () => {
 
       <div className="flex items-center justify-center">
         <Link href="/">
-          <button className="bg-foreground text-background flex items-center gap-2 rounded-2xl px-5 py-3.5 font-medium tracking-widest uppercase">
-            <ArrowLeft02Icon /> Return to Home
+          <button className="bg-foreground group text-background flex items-center gap-2 rounded-2xl px-5 py-3.5 font-medium tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100">
+            <ArrowLeft02Icon className="transition-all group-active:-translate-x-1" />{" "}
+            Return to Home
           </button>
         </Link>
       </div>

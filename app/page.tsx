@@ -8,6 +8,7 @@ import {
   testimonials,
 } from "@/data/hero";
 import {
+  ArrowRight02Icon,
   BubbleChatSpark01Icon,
   Happy01Icon,
   Link04Icon,
@@ -63,12 +64,12 @@ export default function Home() {
         {/* CTA Buttons */}
         <div className="my-10 flex flex-col gap-3 px-10 font-semibold">
           <Link href="/project">
-            <button className="bg-foreground text-background w-full rounded-2xl py-4 text-xs tracking-widest uppercase shadow-xl">
+            <button className="bg-foreground text-background w-full rounded-2xl py-4.5 text-xs tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-105">
               Explore Projects
             </button>
           </Link>
           <Link href="/contact">
-            <button className="w-full rounded-2xl border py-4 text-xs tracking-widest uppercase">
+            <button className="w-full rounded-2xl border py-4 text-xs tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-105">
               Initiate Contact
             </button>
           </Link>
@@ -106,7 +107,7 @@ export default function Home() {
           {featuredProjects.map((t) => (
             <div
               key={t.name}
-              className="bg-warning/5 relative space-y-3 rounded-3xl border p-5"
+              className="bg-warning/5 relative space-y-3 rounded-3xl border p-5 transition-all duration-300 ease-in-out hover:shadow-xl active:scale-102"
             >
               <div>
                 <h3 className="text-primary text-lg font-bold">{t.name}</h3>
@@ -234,8 +235,9 @@ export default function Home() {
         </p>
 
         <Link href="/contact" className="inline-block">
-          <button className="bg-foreground text-background flex items-center rounded-2xl px-5 py-3.5 tracking-widest uppercase">
+          <button className="bg-foreground text-background group flex items-center gap-2 rounded-2xl px-5 py-3.5 tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100">
             Start A Conversation
+            <ArrowRight02Icon className="transition-transform group-active:translate-x-1" />
           </button>
         </Link>
       </div>

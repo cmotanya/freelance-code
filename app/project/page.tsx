@@ -42,8 +42,9 @@ const ProjectPage = () => {
 
       <div className="px-5">
         <Link href="/contact">
-          <button className="bg-foreground text-background flex items-center gap-2 rounded-2xl px-5 py-3.5 font-medium tracking-widest uppercase">
-            Start A Project <ArrowRight02Icon />
+          <button className="bg-foreground text-background group flex items-center gap-2 rounded-2xl px-5 py-3.5 font-medium tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100">
+            Start A Project{" "}
+            <ArrowRight02Icon className="transition-transform group-active:translate-x-1" />
           </button>
         </Link>
       </div>
@@ -52,8 +53,9 @@ const ProjectPage = () => {
 
       <div className="flex items-center justify-center">
         <Link href="/">
-          <button className="bg-foreground text-background flex items-center gap-2 rounded-2xl px-5 py-3.5 font-medium tracking-widest uppercase">
-            <ArrowLeft02Icon /> Return to Home
+          <button className="bg-foreground group text-background flex items-center gap-2 rounded-2xl px-5 py-3.5 font-medium tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100">
+            <ArrowLeft02Icon className="transition-all group-active:-translate-x-1" />{" "}
+            Return to Home
           </button>
         </Link>
       </div>
