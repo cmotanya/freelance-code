@@ -20,23 +20,28 @@ import {
 } from "hugeicons-react";
 import { nova } from "@/data/fonts";
 import { cn } from "@/lib/utils";
+import { Fade, Slide } from "react-awesome-reveal";
 
 export default function Home() {
   return (
     <section className="bg-card my-5 min-h-screen overflow-hidden">
       <div className="bg-card w-full space-y-3 ps-3 pt-12">
-        <div className="text-foreground/50 ms-5 inline-flex items-center gap-2 font-semibold tracking-widest">
-          Hi there <Happy01Icon strokeWidth={2} />
-        </div>
+        <Slide direction="down" duration={300}>
+          <div className="text-foreground/50 ms-5 inline-flex items-center gap-2 font-semibold tracking-widest">
+            Hi there <Happy01Icon strokeWidth={2} />
+          </div>
+        </Slide>
 
-        <div className="flex items-center justify-between">
-          <h1 className="text-6xl leading-[0.9] font-extrabold tracking-tighter">
-            <span>Cornelius</span>
-            <br />
-            <span className={cn("text-foreground/60", nova.className)}>
-              Motanya
-            </span>
-          </h1>
+        <div className="relative flex items-center justify-between">
+          <Fade>
+            <h1 className="text-6xl leading-[0.9] font-extrabold tracking-tighter">
+              <span>Cornelius</span>
+              <br />
+              <span className={cn("text-foreground/60", nova.className)}>
+                Motanya
+              </span>
+            </h1>
+          </Fade>
 
           <div className="size-40 shrink-0 overflow-hidden rounded-full p-1">
             <Image
@@ -50,30 +55,34 @@ export default function Home() {
         </div>
 
         <div className="space-y-2">
-          <p className="text-warning text-sm font-semibold tracking-widest">
-            Taking you from zero to hero
-          </p>
-          <p className="text-base leading-relaxed">
-            Delivering practical tailored solutions for uncomfortable users
-            through the <strong>web</strong>,{" "}
-            <strong>network installations</strong> and{" "}
-            <strong>security setups</strong>.
-          </p>
+          <Fade direction="up" cascade duration={300}>
+            <p className="text-warning text-sm font-semibold tracking-widest">
+              Taking you from zero to hero
+            </p>
+            <p className="text-base leading-relaxed">
+              Delivering practical tailored solutions for uncomfortable users
+              through the <strong>web</strong>,{" "}
+              <strong>network installations</strong> and{" "}
+              <strong>security setups</strong>.
+            </p>
+          </Fade>
         </div>
 
         {/* CTA Buttons */}
-        <div className="my-10 flex flex-col gap-3 px-10 font-semibold">
-          <Link href="/project">
-            <button className="bg-foreground text-background w-full rounded-2xl py-4.5 text-xs tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-105">
-              Explore Projects
-            </button>
-          </Link>
-          <Link href="/contact">
-            <button className="w-full rounded-2xl border py-4 text-xs tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-105">
-              Initiate Contact
-            </button>
-          </Link>
-        </div>
+        <Fade duration={300}>
+          <div className="my-10 flex flex-col gap-3 px-10 font-semibold">
+            <Link href="/project">
+              <button className="bg-foreground text-background w-full rounded-2xl py-4.5 text-xs tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-105">
+                Explore Projects
+              </button>
+            </Link>
+            <Link href="/contact">
+              <button className="w-full rounded-2xl border py-4 text-xs tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-105">
+                Initiate Contact
+              </button>
+            </Link>
+          </div>
+        </Fade>
       </div>
 
       {/* Stat strip */}
