@@ -26,14 +26,14 @@ export default function Home() {
   return (
     <section className="bg-card my-5 min-h-screen overflow-hidden">
       <div className="bg-card w-full space-y-3 ps-3 pt-12">
-        <Slide direction="down" duration={300}>
+        <Slide direction="down" duration={300} triggerOnce>
           <div className="text-foreground/50 ms-5 inline-flex items-center gap-2 font-semibold tracking-widest">
             Hi there <Happy01Icon strokeWidth={2} />
           </div>
         </Slide>
 
         <div className="relative flex items-center justify-between">
-          <Fade>
+          <Fade triggerOnce>
             <h1 className="text-6xl leading-[0.9] font-extrabold tracking-tighter">
               <span>Cornelius</span>
               <br />
@@ -55,7 +55,7 @@ export default function Home() {
         </div>
 
         <div className="space-y-2">
-          <Fade direction="up" cascade duration={300}>
+          <Fade direction="up" cascade duration={300} triggerOnce>
             <p className="text-warning text-sm font-semibold tracking-widest">
               Taking you from zero to hero
             </p>
@@ -69,7 +69,7 @@ export default function Home() {
         </div>
 
         {/* CTA Buttons */}
-        <Fade duration={300}>
+        <Fade duration={300} delay={250} triggerOnce>
           <div className="my-10 flex flex-col gap-3 px-10 font-semibold">
             <Link href="/project">
               <button className="bg-foreground text-background w-full rounded-2xl py-4.5 text-xs tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-105">
@@ -87,22 +87,24 @@ export default function Home() {
 
       {/* Stat strip */}
       <div className="mx-2 my-15 grid grid-cols-3 gap-2">
-        {stats.map(({ value, label, icon: Icon }) => (
-          <div
-            key={label}
-            className="bg-muted pt- relative flex flex-col items-center gap-1 overflow-hidden rounded-2xl border px-4 py-2 pt-8 text-center"
-          >
-            <span className="text-warning bg-warning/10 border-warning/30 absolute -top-0.5 -right-0.5 rounded-full border p-1">
-              <Icon size={20} strokeWidth={2} />
-            </span>
-            <span className="text-primary text-3xl font-extrabold">
-              {value}
-            </span>
-            <span className="text-foreground/60 text-[10px] leading-tight font-bold tracking-wide uppercase">
-              {label}
-            </span>
-          </div>
-        ))}
+        <Fade duration={300} direction="down" cascade triggerOnce>
+          {stats.map(({ value, label, icon: Icon }) => (
+            <div
+              key={label}
+              className="bg-muted pt- relative flex flex-col items-center gap-1 overflow-hidden rounded-2xl border px-4 py-2 pt-8 text-center"
+            >
+              <span className="text-warning bg-warning/10 border-warning/30 absolute -top-0.5 -right-0.5 rounded-full border p-1">
+                <Icon size={20} strokeWidth={2} />
+              </span>
+              <span className="text-primary text-3xl font-extrabold">
+                {value}
+              </span>
+              <span className="text-foreground/60 text-[10px] leading-tight font-bold tracking-wide uppercase">
+                {label}
+              </span>
+            </div>
+          ))}
+        </Fade>
       </div>
 
       {/* Recent deployments */}
@@ -113,34 +115,36 @@ export default function Home() {
         </h2>
 
         <div className="grid grid-cols-1 gap-3">
-          {featuredProjects.map((t) => (
-            <div
-              key={t.name}
-              className="bg-warning/5 relative space-y-3 rounded-3xl border p-5 transition-all duration-300 ease-in-out hover:shadow-xl active:scale-102"
-            >
-              <div>
-                <h3 className="text-primary text-lg font-bold">{t.name}</h3>
-                <p>{t.type}</p>
+          <Slide cascade duration={300} direction="right" triggerOnce>
+            {featuredProjects.map((t) => (
+              <div
+                key={t.name}
+                className="bg-warning/5 relative space-y-3 rounded-3xl border p-5 transition-all duration-300 ease-in-out hover:shadow-xl active:scale-102"
+              >
+                <div>
+                  <h3 className="text-primary text-lg font-bold">{t.name}</h3>
+                  <p>{t.type}</p>
+                </div>
+
+                <p className="text-foreground/60 text-[10px] font-medium">
+                  {t.desc}
+                </p>
+
+                <Link04Icon className="absolute top-1.5 right-1.5" />
+
+                <div className="flex flex-wrap gap-1 overflow-hidden">
+                  {t.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="bg-warning/15 text-warning border-warning rounded-md border px-1.5 text-[10px] font-bold"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-
-              <p className="text-foreground/60 text-[10px] font-medium">
-                {t.desc}
-              </p>
-
-              <Link04Icon className="absolute top-1.5 right-1.5" />
-
-              <div className="flex flex-wrap gap-1 overflow-hidden">
-                {t.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="bg-warning/15 text-warning border-warning rounded-md border px-1.5 text-[10px] font-bold"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
+          </Slide>
         </div>
       </div>
 
