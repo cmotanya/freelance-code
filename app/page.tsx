@@ -62,16 +62,18 @@ export default function Home() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="my-10 flex flex-col gap-3 px-10 font-semibold">
-          <Link href="/project">
-            <button className="bg-foreground text-background w-full rounded-2xl py-4.5 text-xs tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-105">
-              Explore Projects
-            </button>
+        <div className="my-10 flex flex-col gap-3 px-6 text-center font-semibold">
+          <Link
+            href="/project"
+            className="bg-foreground text-background w-full rounded-3xl py-5 tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-105"
+          >
+            Explore Projects
           </Link>
-          <Link href="/contact">
-            <button className="w-full rounded-2xl border py-4 text-xs tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-105">
-              Initiate Contact
-            </button>
+          <Link
+            href="/contact"
+            className="w-full rounded-3xl border py-4.5 tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-105"
+          >
+            Initiate Contact
           </Link>
         </div>
       </div>
@@ -105,7 +107,8 @@ export default function Home() {
 
         <div className="grid grid-cols-1 gap-3">
           {featuredProjects.map((t) => (
-            <div
+            <Link
+              href={t.link}
               key={t.name}
               className="bg-warning/5 relative space-y-3 rounded-3xl border p-5 transition-all duration-300 ease-in-out hover:shadow-xl active:scale-102"
             >
@@ -130,7 +133,7 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -235,7 +238,7 @@ export default function Home() {
         </p>
 
         <Link href="/contact" className="inline-block">
-          <button className="bg-foreground text-background group flex items-center gap-2 rounded-2xl px-5 py-3.5 tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100">
+          <button className="bg-foreground text-background group flex items-center gap-2 rounded-3xl px-5 py-4.5 tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100">
             Start A Conversation
             <ArrowRight02Icon className="transition-transform group-active:translate-x-1" />
           </button>

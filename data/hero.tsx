@@ -19,12 +19,14 @@ export const featuredProjects = [
     type: "Internal System",
     tags: ["Tanstack Start", "PostgreSQL"],
     desc: "Digital ledger for Kenyan savings cooperatives.",
+    link: "https://my-chama.netlify.app",
   },
   {
     name: "JobTrack",
     type: "Internal System",
     tags: ["TypeScript", "Dashboards"],
     desc: "Job application pipeline tracker.",
+    link: "",
   },
 ];
 

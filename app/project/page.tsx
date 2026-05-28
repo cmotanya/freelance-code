@@ -40,23 +40,25 @@ const ProjectPage = () => {
         ))}
       </div>
 
-      <div className="px-5">
-        <Link href="/contact">
-          <button className="bg-foreground text-background group flex items-center gap-2 rounded-2xl px-5 py-3.5 font-medium tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100">
-            Start A Project{" "}
-            <ArrowRight02Icon className="transition-transform group-active:translate-x-1" />
-          </button>
+      <div className="w-fit px-5">
+        <Link
+          href="/contact"
+          className="bg-foreground text-background group flex items-center gap-2 rounded-3xl px-5 py-4.5 font-medium tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100"
+        >
+          Start A Project{" "}
+          <ArrowRight02Icon className="transition-transform group-active:translate-x-1" />
         </Link>
       </div>
 
       <ProjectTabs />
 
       <div className="flex items-center justify-center">
-        <Link href="/">
-          <button className="bg-foreground group text-background flex items-center gap-2 rounded-2xl px-5 py-3.5 font-medium tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100">
-            <ArrowLeft02Icon className="transition-all group-active:-translate-x-1" />{" "}
-            Return to Home
-          </button>
+        <Link
+          href="/"
+          className="bg-foreground group text-background flex items-center gap-2 rounded-3xl px-5 py-4.5 font-medium tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100"
+        >
+          <ArrowLeft02Icon className="transition-all group-active:-translate-x-1" />{" "}
+          Return to Home
         </Link>
       </div>
     </section>

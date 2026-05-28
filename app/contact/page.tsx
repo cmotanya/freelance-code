@@ -49,14 +49,12 @@ const Contact = () => {
             notified of the response.
           </p>
 
-          <Link href="#scroll-to-contact-form">
-            <button
-              type="button"
-              className="bg-foreground text-background group flex items-center gap-2 rounded-2xl px-5 py-3.5 tracking-wide uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100"
-            >
-              Book A Schedule{" "}
-              <ArrowRight02Icon className="transition-transform group-active:translate-x-1" />
-            </button>
+          <Link
+            href="#scroll-to-contact-form"
+            className="bg-foreground text-background group flex w-fit items-center gap-2 rounded-3xl px-5 py-4.5 tracking-wide uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100"
+          >
+            Book A Schedule{" "}
+            <ArrowRight02Icon className="transition-transform group-active:translate-x-1" />
           </Link>
         </div>
       </div>
@@ -128,11 +126,12 @@ const Contact = () => {
       </div>
 
       <div className="flex items-center justify-center">
-        <Link href="/">
-          <button className="bg-foreground group text-background flex items-center gap-2 rounded-2xl px-5 py-3.5 font-medium tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100">
-            <ArrowLeft02Icon className="transition-all group-active:-translate-x-1" />{" "}
-            Return to Home
-          </button>
+        <Link
+          href="/"
+          className="bg-foreground group text-background flex items-center gap-2 rounded-3xl px-5 py-4 font-medium tracking-widest uppercase shadow-xl transition-all duration-200 ease-in-out hover:scale-95 active:scale-100"
+        >
+          <ArrowLeft02Icon className="transition-all group-active:-translate-x-1" />{" "}
+          Return to Home
         </Link>
       </div>
     </section>
